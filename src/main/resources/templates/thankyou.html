@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you</title>
+</head>
+<body>
+
+<h2>Thank You!</h2>
+<p>Redirecting back to registration page in <span id="countdown">3</span> seconds...</p>
+
+<script th:inline="javascript">
+    var seconds = 3;
+
+    function countdown() {
+        var countdownElement = document.getElementById("countdown");
+        if (seconds > 0) {
+            countdownElement.innerText = seconds;
+            seconds--;
+            setTimeout(countdown, 1000);
+        } else {
+            window.location.href = '/ui/users/register';
+        }
+    }
+
+    setTimeout(countdown, 1000);
+</script>
+
+</body>
+</html>
