@@ -7,7 +7,7 @@
 <body>
 
 <h2>Thank You!</h2>
-<p>Redirecting back to registration page in <span id="countdown">3</span> seconds...</p>
+<p>Redirecting back to Welcome page in <span id="countdown">3</span> seconds...</p>
 
 <script th:inline="javascript">
     var seconds = 3;
@@ -19,7 +19,7 @@
             seconds--;
             setTimeout(countdown, 1000);
         } else {
-            window.location.href = '/ui/users/register';
+            window.location.href = '/';
         }
     }
 

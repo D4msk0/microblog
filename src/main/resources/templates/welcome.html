@@ -15,7 +15,23 @@
 <section class="hero">
     <!-- Your hero section content goes here -->
     <h1>Welcome to Microblog</h1>
-    <p>Your platform for micro-blogging greatness!</p>
+    <p>Your platform for microblogging greatness!</p>
+
+    <!-- Login Form -->
+    <form th:action="@{/users/login}" method="post">
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="username" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="password" required>
+
+        <button type="submit" class="btn btn-secondary">Login</button>
+    </form>
+
+    <!-- Registration Button -->
+    <p>
+        <a th:href="@{/ui/users/register}" class="btn btn-primary">Register</a>
+    </p>
 </section>
 
 <section class="features">
