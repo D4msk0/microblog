@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/ui/users")
-public class ThymeleafController {
+public class UIController {
 
     private final UserService userService;
 
     @Autowired
-    public ThymeleafController(UserService userService) {
+    public UIController(UserService userService) {
         this.userService = userService;
     }
 

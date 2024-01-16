@@ -3,7 +3,6 @@ package com.damsko.microblog.controller;
 import com.damsko.microblog.model.User;
 import com.damsko.microblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,12 +10,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
-public class UserController {
+public class APIController {
 
     private final UserService userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public APIController(UserService userService) {
         this.userService = userService;
     }
 
@@ -40,10 +39,10 @@ public class UserController {
         userService.deleteUser(userId);
     }
 
-    @PostMapping("/register")
-    public String processRegistration(@ModelAttribute("user") User user) {
-        userService.createUser(user);
-        return "redirect:/ui/register";
-    }
+//    @PostMapping("/register")
+//    public String processRegistration(@ModelAttribute("user") User user) {
+//        userService.createUser(user);
+//        return "redirect:/ui/register";
+//    }
 
 }
